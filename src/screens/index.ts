@@ -1,2 +1,5 @@
-// Pantallas de presentación desacopladas de las 6 capas de dominio
-export {};
+export * from './DiscoveryScreen';
+export * from './DiagnosticsConsoleScreen';
+export * from './InstallationEvidenceScreen';
+export * from './OfflineHistoryScreen';
+export * from './CredentialsVaultScreen';
