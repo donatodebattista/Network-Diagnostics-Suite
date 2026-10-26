@@ -23,12 +23,12 @@ export default class Diagnostic extends Model {
     [TableName.DEVICES]: { type: 'belongs_to', key: 'device_id' },
   };
 
-  @field('device_id') deviceId!: string;
-  @field('protocol') protocol!: DiagnosticProtocol;
-  @text('raw_output') rawOutput!: string;
-  @json('parsed_metrics', sanitizeMetrics) parsedMetrics!: ParsedDiagnosticMetrics;
-  @field('status') status!: DiagnosticStatus;
-  @date('executed_at') executedAt!: Date;
+  @field('device_id') deviceId: string;
+  @field('protocol') protocol: DiagnosticProtocol;
+  @text('raw_output') rawOutput: string;
+  @json('parsed_metrics', sanitizeMetrics) parsedMetrics: ParsedDiagnosticMetrics;
+  @field('status') status: DiagnosticStatus;
+  @date('executed_at') executedAt: Date;
 
-  @immutableRelation(TableName.DEVICES, 'device_id') device!: Relation<Device>;
+  @immutableRelation(TableName.DEVICES, 'device_id') device: Relation<Device>;
 }

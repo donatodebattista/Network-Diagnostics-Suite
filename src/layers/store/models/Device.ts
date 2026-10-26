@@ -13,14 +13,14 @@ export default class Device extends Model {
     [TableName.INSTALLATIONS]: { type: 'has_many', foreignKey: 'device_id' },
   };
 
-  @text('ip_address') ipAddress!: string;
-  @text('mac_address') macAddress!: string;
-  @text('hostname') hostname!: string | null;
-  @text('vendor') vendor!: string | null;
-  @field('serial_number') serialNumber!: string | null;
-  @readonly @date('created_at') createdAt!: Date;
-  @readonly @date('updated_at') updatedAt!: Date;
+  @text('ip_address') ipAddress: string;
+  @text('mac_address') macAddress: string;
+  @text('hostname') hostname: string | null;
+  @text('vendor') vendor: string | null;
+  @field('serial_number') serialNumber: string | null;
+  @readonly @date('created_at') createdAt: Date;
+  @readonly @date('updated_at') updatedAt: Date;
 
-  @children(TableName.DIAGNOSTICS) diagnostics!: Query<Diagnostic>;
-  @children(TableName.INSTALLATIONS) installations!: Query<Installation>;
+  @children(TableName.DIAGNOSTICS) diagnostics: Query<Diagnostic>;
+  @children(TableName.INSTALLATIONS) installations: Query<Installation>;
 }

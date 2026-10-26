@@ -11,17 +11,17 @@ import { TableName } from '../schema';
 export default class OutboxQueueItem extends Model {
   static table = TableName.OUTBOX_QUEUE;
 
-  @field('entity_type') entityType!: OutboxEntityType;
-  @field('entity_id') entityId!: string;
-  @field('endpoint') endpoint!: OutboxSyncEndpoint;
-  @text('payload') payload!: string;
-  @field('attempts') attempts!: number;
-  @field('max_attempts') maxAttempts!: number;
-  @field('next_retry_at') nextRetryAt!: number | null;
-  @text('last_error') lastError!: string | null;
-  @field('status') status!: OutboxStatus;
-  @readonly @date('created_at') createdAt!: Date;
-  @readonly @date('updated_at') updatedAt!: Date;
+  @field('entity_type') entityType: OutboxEntityType;
+  @field('entity_id') entityId: string;
+  @field('endpoint') endpoint: OutboxSyncEndpoint;
+  @text('payload') payload: string;
+  @field('attempts') attempts: number;
+  @field('max_attempts') maxAttempts: number;
+  @field('next_retry_at') nextRetryAt: number | null;
+  @text('last_error') lastError: string | null;
+  @field('status') status: OutboxStatus;
+  @readonly @date('created_at') createdAt: Date;
+  @readonly @date('updated_at') updatedAt: Date;
 
   public getParsedPayload<T extends OutboxPayload = OutboxPayload>(): T {
     return JSON.parse(this.payload) as T;

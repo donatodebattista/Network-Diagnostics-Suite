@@ -11,13 +11,13 @@ export default class Installation extends Model {
     [TableName.DEVICES]: { type: 'belongs_to', key: 'device_id' },
   };
 
-  @field('device_id') deviceId!: string;
-  @text('technician_notes') technicianNotes!: string;
-  @field('latitude') latitude!: number;
-  @field('longitude') longitude!: number;
-  @field('photo_uri') photoUri!: string;
-  @field('pdf_path') pdfPath!: string | null;
-  @readonly @date('created_at') createdAt!: Date;
+  @field('device_id') deviceId: string;
+  @text('technician_notes') technicianNotes: string;
+  @field('latitude') latitude: number;
+  @field('longitude') longitude: number;
+  @field('photo_uri') photoUri: string;
+  @field('pdf_path') pdfPath: string | null;
+  @readonly @date('created_at') createdAt: Date;
 
-  @immutableRelation(TableName.DEVICES, 'device_id') device!: Relation<Device>;
+  @immutableRelation(TableName.DEVICES, 'device_id') device: Relation<Device>;
 }
