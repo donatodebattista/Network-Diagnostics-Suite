@@ -14,9 +14,11 @@
   "dependencies": {
     "@nozbe/watermelondb": "^0.28.0",
     "@react-native/new-app-screen": "0.88.0",
+    "buffer": "^6.0.3",
     "react": "19.3.0",
     "react-native": "0.88.0",
-    "react-native-safe-area-context": "^5.5.2"
+    "react-native-safe-area-context": "^5.5.2",
+    "react-native-udp": "^4.1.7"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
