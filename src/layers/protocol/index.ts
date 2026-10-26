@@ -4,6 +4,7 @@
  */
 import type { ParsedDiagnosticMetrics } from '../../shared/types/domain';
 import type { SnmpDiagnosticExecutionResult } from './snmp';
+import type { SshDiagnosticResult, SshVendorProfile } from './ssh';
 
 export interface ISnmpClient {
   queryDeviceMetrics(
@@ -23,9 +24,15 @@ export interface ISshClient {
   executeDiagnosticBatch(
     host: string,
     port: number,
-    commands: string[],
+    commands: readonly string[],
     timeoutMs?: number,
   ): Promise<string>;
+  runVendorDiagnostic(
+    host: string,
+    vendorOrProfile?: string | SshVendorProfile | null,
+    port?: number,
+    timeoutMs?: number,
+  ): Promise<SshDiagnosticResult>;
 }
 
 export * from './snmp';
