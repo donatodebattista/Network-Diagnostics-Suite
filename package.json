@@ -7,16 +7,20 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
+    "start:stub": "npm --prefix backend-stub run start",
+    "typecheck": "tsc --noEmit",
     "test": "jest"
   },
   "dependencies": {
+    "@nozbe/watermelondb": "^0.28.0",
+    "@react-native/new-app-screen": "0.88.0",
     "react": "19.3.0",
     "react-native": "0.88.0",
-    "@react-native/new-app-screen": "0.88.0",
     "react-native-safe-area-context": "^5.5.2"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
+    "@babel/plugin-proposal-decorators": "^7.29.7",
     "@babel/preset-env": "^7.25.3",
     "@babel/runtime": "^7.25.0",
     "@react-native-community/cli": "20.2.0",
