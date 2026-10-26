@@ -15,3 +15,6 @@ export interface PdfReportResult {
 export interface IReportingService {
   generateInstallationReport(request: PdfReportRequest): Promise<PdfReportResult>;
 }
+
+export * from './pdfTemplate';
+export * from './reportingService';
