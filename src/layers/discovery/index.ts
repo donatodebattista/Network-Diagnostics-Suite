@@ -11,6 +11,15 @@ export interface DiscoveredNode {
 }
 
 export interface IDiscoveryService {
-  scanLocalSubnet(subnetPrefix: string, timeoutMs?: number): Promise<DiscoveredNode[]>;
+  scanLocalSubnet(
+    subnetPrefix: string,
+    timeoutMs?: number,
+    onNodeDiscovered?: (node: DiscoveredNode) => void,
+  ): Promise<DiscoveredNode[]>;
   stopScan(): void;
 }
+
+export * from './ouiVendorTable';
+export * from './mdnsScanner';
+export * from './subnetSweeper';
+export * from './discoveryService';
